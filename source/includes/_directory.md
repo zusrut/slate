@@ -2,6 +2,9 @@
 ## Directory
 
 ### Domains
+
+
+
 #### Get Domains List
 
 ```shell
@@ -56,7 +59,6 @@ Parameter | Type | Description
 
 
 ##### Errors
-
 
 
 
@@ -130,7 +132,6 @@ Parameter | Type | Description
 
 
 
-
 #### Import Directory from FreeSwitch
 
 ```shell
@@ -165,7 +166,6 @@ Parameter | Type | Description
 
 
 ##### Errors
-
 
 
 
@@ -221,7 +221,6 @@ Parameter | Type | Description
 
 
 
-
 #### Rename Domain
 
 ```shell
@@ -273,7 +272,6 @@ Parameter | Type | Description
 
 
 
-
 #### Disable Domain
 
 ```shell
@@ -302,7 +300,7 @@ exampleSocket.send('{"event":"[Domains][Switch] Domain","data":{"token":"dd64511
 
 ```
 
-Disable directory domain.
+Disable/enable directory domain.
 
 ##### Event value
 
@@ -322,7 +320,6 @@ Parameter | Type | Description
 * domain not found
 * domain not found
 * can't change
-
 
 
 
@@ -366,7 +363,6 @@ Parameter | Type | Description
 
 * domain not found
 * can't delete domain
-
 
 
 
@@ -457,15 +453,14 @@ Parameter | Type | Description
 
 
 
-
 #### Add Domain Parameter
 
 ```shell
 curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Domains] New_domain_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"index":0,"name":"param1","value":"value1"}}'
+	 -d '{"event":"[Domains] New_domain_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"param1","value":"value1"}}'
 ```
 ```javascript
-exampleSocket.send('{"event":"[Domains] New_domain_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"index":0,"name":"param1","value":"value1"}}');
+exampleSocket.send('{"event":"[Domains] New_domain_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"param1","value":"value1"}}');
 ```
 
 
@@ -502,7 +497,6 @@ Parameter | Type | Description
 --------- | ------- | -----------
  token | String | User auth token.
  id | Integer | Item ID.
- index | Integer | 
  name | String | 
  value | String | 
 
@@ -513,7 +507,6 @@ Parameter | Type | Description
 * empty data
 * param not found
 * can't add
-
 
 
 
@@ -576,7 +569,6 @@ Parameter | Type | Description
 
 
 
-
 #### Disable Domain Parameter
 
 ```shell
@@ -609,7 +601,7 @@ exampleSocket.send('{"event":"[Domains][Switch] Domain parameter","data":{"token
 
 ```
 
-Disable directory domain parameter.
+Disable/enable directory domain parameter.
 
 ##### Event value
 
@@ -628,7 +620,6 @@ Parameter | Type | Description
 
 * parameter not found
 * can't change
-
 
 
 
@@ -676,15 +667,14 @@ Parameter | Type | Description
 
 
 
-
 #### Add Domain Variable
 
 ```shell
 curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Domains] New_domain_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"index":0,"name":"var1","value":"value1"}}'
+	 -d '{"event":"[Domains] New_domain_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"var1","value":"value1"}}'
 ```
 ```javascript
-exampleSocket.send('{"event":"[Domains] New_domain_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"index":0,"name":"var1","value":"value1"}}');
+exampleSocket.send('{"event":"[Domains] New_domain_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"var1","value":"value1"}}');
 ```
 
 
@@ -721,7 +711,6 @@ Parameter | Type | Description
 --------- | ------- | -----------
  token | String | User auth token.
  id | Integer | Item ID.
- index | Integer | 
  name | String | 
  value | String | 
 
@@ -732,7 +721,6 @@ Parameter | Type | Description
 * empty data
 * domain not found
 * can't add
-
 
 
 
@@ -795,7 +783,6 @@ Parameter | Type | Description
 
 
 
-
 #### Disable Domain Variable
 
 ```shell
@@ -828,7 +815,7 @@ exampleSocket.send('{"event":"[Domains][Switch] Domain variable","data":{"token"
 
 ```
 
-Disable directory domain variable.
+Disable/enable directory domain variable.
 
 ##### Event value
 
@@ -849,7 +836,6 @@ Parameter | Type | Description
 * empty data
 * variable not found
 * can't add
-
 
 
 
@@ -894,7 +880,10 @@ Parameter | Type | Description
 * wrong id
 * can't delete
 
+
+
 ### Users
+
 
 
 #### Get Users
@@ -1635,7 +1624,6 @@ Parameter | Type | Description
 
 
 
-
 #### Get User Details
 
 ```shell
@@ -1748,15 +1736,14 @@ Parameter | Type | Description
 
 
 
-
 #### Add User Parameter
 
 ```shell
 curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Users] Add_user_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"index":0,"name":"param1","value":"val1"}}'
+	 -d '{"event":"[Users] Add_user_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"name":"param1","value":"val1"}}'
 ```
 ```javascript
-exampleSocket.send('{"event":"[Users] Add_user_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"index":0,"name":"param1","value":"val1"}}');
+exampleSocket.send('{"event":"[Users] Add_user_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"name":"param1","value":"val1"}}');
 ```
 
 
@@ -1795,7 +1782,6 @@ Parameter | Type | Description
 --------- | ------- | -----------
  token | String | User auth token.
  id | Integer | Item ID.
- index | Integer | 
  name | String | 
  value | String | 
 
@@ -1806,7 +1792,6 @@ Parameter | Type | Description
 * empty data
 * user not found
 * can't add
-
 
 
 
@@ -1871,7 +1856,6 @@ Parameter | Type | Description
 
 
 
-
 #### Disable User Parameter
 
 ```shell
@@ -1906,7 +1890,7 @@ exampleSocket.send('{"event":"[Users][Switch] User parameter","data":{"token":"d
 
 ```
 
-Disable directory user parameter.
+Disable/enable directory user parameter.
 
 ##### Event value
 
@@ -1926,7 +1910,6 @@ Parameter | Type | Description
 * wrong id
 * parameter not found
 * can't change
-
 
 
 
@@ -1975,15 +1958,14 @@ Parameter | Type | Description
 
 
 
-
 #### Add User Variable
 
 ```shell
 curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Users] Add_user_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"index":0,"name":"var1","value":"val1"}}'
+	 -d '{"event":"[Users] Add_user_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"name":"var1","value":"val1"}}'
 ```
 ```javascript
-exampleSocket.send('{"event":"[Users] Add_user_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"index":0,"name":"var1","value":"val1"}}');
+exampleSocket.send('{"event":"[Users] Add_user_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":56,"name":"var1","value":"val1"}}');
 ```
 
 
@@ -2022,7 +2004,6 @@ Parameter | Type | Description
 --------- | ------- | -----------
  token | String | User auth token.
  id | Integer | Item ID.
- index | Integer | 
  name | String | 
  value | String | 
 
@@ -2033,7 +2014,6 @@ Parameter | Type | Description
 * empty data
 * user not found
 * can't add
-
 
 
 
@@ -2098,7 +2078,6 @@ Parameter | Type | Description
 
 
 
-
 #### Disable User Variable
 
 ```shell
@@ -2133,7 +2112,7 @@ exampleSocket.send('{"event":"[Users][Switch] User variable","data":{"token":"dd
 
 ```
 
-Delete directory user variable.
+Disable/enable directory user variable.
 
 ##### Event value
 
@@ -2153,7 +2132,6 @@ Parameter | Type | Description
 * wrong id
 * variable not found
 * can't change
-
 
 
 
@@ -2198,7 +2176,6 @@ Parameter | Type | Description
 * wrong id
 * variable not found
 * can't change
-
 
 
 
@@ -2252,7 +2229,6 @@ Parameter | Type | Description
 
 
 
-
 #### Update User Cidr
 
 ```shell
@@ -2296,7 +2272,6 @@ Parameter | Type | Description
 
 * wrong id
 * empty data
-
 
 
 
@@ -2492,7 +2467,6 @@ Parameter | Type | Description
 
 
 
-
 #### Rename User
 
 ```shell
@@ -2542,7 +2516,6 @@ Parameter | Type | Description
 
 
 
-
 #### Delete User
 
 ```shell
@@ -2585,7 +2558,6 @@ Parameter | Type | Description
 
 * user not found
 * can't delete user
-
 
 
 
@@ -3156,40 +3128,2047 @@ Parameter | Type | Description
 
 
 
+### Groups
 
 
-#### 
+
+#### Get Groups
 
 ```shell
 curl -X POST "https://HOST:PORT/api/v1"
-	 -d ''
+	 -d '{"event":"[Groups] Get_groups","data":{"token":"dd64511448aed2ce2160fc091a79749d"}}'
 ```
 ```javascript
-exampleSocket.send('');
+exampleSocket.send('{"event":"[Groups] Get_groups","data":{"token":"dd64511448aed2ce2160fc091a79749d"}}');
 ```
 
 
 > Returns JSON structured like this:
 
 ```json
-
+{
+  "MessageType": "[Groups] Get_groups",
+  "domains": {
+    "10": {
+      "id": 10,
+      "enabled": false,
+      "name": "new-domain",
+      "sip_regs_counter": 0
+    },
+    "8": {
+      "id": 8,
+      "enabled": true,
+      "name": "domain.com",
+      "sip_regs_counter": 0
+    },
+    "9": {
+      "id": 9,
+      "enabled": true,
+      "name": "test1",
+      "sip_regs_counter": 0
+    }
+  },
+  "list": {
+    "8": {
+      "10": "default",
+      "11": "sales",
+      "12": "billing",
+      "13": "support"
+    },
+    "9": {
+      "14": "default",
+      "15": "sales",
+      "16": "billing",
+      "17": "support"
+    }
+  }
+}
 
 ```
 
-.
+Get directory groups.
 
 ##### Event value
 
-``
+`[Groups] Get_groups`
 
 ##### Data Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
+ token | String | User auth token.
 
 
 ##### Errors
 
-### Groups
+
+
+
+
+#### Get Group Users
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Get_group_users","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":10}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Get_group_users","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":10}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Get_group_users",
+  "list": {
+    "8": {
+      "104": "4000",
+      "105": "5000",
+      "106": "5001",
+      "107": "5002",
+      "108": "5003",
+      "109": "5004",
+      "110": "5005",
+      "111": "5006",
+      "112": "5007",
+      "113": "5008",
+      "114": "5009",
+      "115": "6000",
+      "116": "1400",
+      "57": "1001",
+      "58": "1002",
+      "59": "1003",
+      "60": "1004",
+      "61": "1005",
+      "62": "1006",
+      "63": "1007",
+      "64": "1008",
+      "65": "1009",
+      "66": "1010",
+      "67": "1011",
+      "68": "1012",
+      "69": "1013",
+      "70": "1014",
+      "71": "1015",
+      "72": "1016",
+      "73": "1017",
+      "74": "1018",
+      "75": "1019",
+      "76": "brian",
+      "77": "default",
+      "78": "example.com",
+      "79": "SEP001120AABBCC"
+    }
+  },
+  "group_users": {
+    "10": {
+      "92": {
+        "id": 92,
+        "enabled": true,
+        "user_id": 104,
+        "name": "4000",
+        "type": "pointer"
+      },
+      "93": {
+        "id": 93,
+        "enabled": true,
+        "user_id": 107,
+        "name": "5002",
+        "type": "pointer"
+      }
+    }
+  }
+}
+
+```
+
+Get list of members of group and list of possible members.
+
+##### Event value
+
+`[Groups] Get_group_users`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* group not found
+
+
+
+
+#### Add Group
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Add_new_group","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"new-group"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Add_new_group","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":8,"name":"new-group"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Add_new_group",
+  "items": {
+    "18": "new-group"
+  },
+  "id": 8
+}
+
+```
+
+Add new directory group.
+
+##### Event value
+
+`[Groups] Add_new_group`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* domain not found
+
+
+
+
+#### Rename Group
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Update_group_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":18,"name":"new-group2"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Update_group_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":18,"name":"new-group2"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Update_group_name",
+  "item": {
+    "id": 18,
+    "name": "new-group2"
+  },
+  "id": 8
+}
+
+```
+
+Change directory group name.
+
+##### Event value
+
+`[Groups] Update_group_name`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* group not found
+* empty data
+* group not found
+
+
+
+
+#### Delete Group
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Del_group","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":18}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Del_group","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":18}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Del_group",
+  "item": {
+    "id": 18
+  },
+  "id": 8
+}
+
+```
+
+Delete directory group.
+
+##### Event value
+
+`[Groups] Del_group`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* group not found
+* can't delete group
+
+
+
+
+#### Add User to Group
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Add_group_user","data":{"token":"dd64511448aed2ce2160fc091a79749d","value":"57","id":10}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Add_group_user","data":{"token":"dd64511448aed2ce2160fc091a79749d","value":"57","id":10}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Add_group_user",
+  "group_users": {
+    "10": {
+      "94": {
+        "id": 94,
+        "enabled": true,
+        "user_id": 57,
+        "name": "1001",
+        "type": "pointer"
+      }
+    }
+  },
+  "id": 10
+}
+
+```
+
+Add directory user to directory group.
+
+##### Event value
+
+`[Groups] Add_group_user`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ value | String | 
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* wrong group id
+* wrong user id
+* group not found
+* user not found
+
+
+
+
+#### Remove User From Group
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Groups] Del_group_user","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":94}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Groups] Del_group_user","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":94}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Groups] Del_group_user",
+  "id": 10,
+  "affected_id": 94
+}
+
+```
+
+Delete directory user from directory group.
+
+##### Event value
+
+`[Groups] Del_group_user`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* user not found
+
+
 
 ### Gateways
+
+
+
+#### Add User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Add_new_user_gateway",
+  "item": {
+    "id": 6,
+    "name": "new"
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Add directory user's gateway.
+
+##### Event value
+
+`[Gateways] Add_new_user_gateway`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* domain not found
+
+
+
+
+#### Rename User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Update_user_gateway_name",
+  "item": {
+    "id": 6,
+    "name": "new2"
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Change directory user gateway name.
+
+##### Event value
+
+`[Gateways] Update_user_gateway_name`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* gateway not found
+* empty data
+* gateway not found
+
+
+
+
+#### Delete User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Del_user_gateway",
+  "item": {
+    "id": 6
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Delete directory user gateway.
+
+##### Event value
+
+`[Gateways] Del_user_gateway`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* gateway not found
+* can't delete gateway
+
+
+
+
+#### Get User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Get_users_gateways","data":{"token":"dd64511448aed2ce2160fc091a79749d"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Get_users_gateways","data":{"token":"dd64511448aed2ce2160fc091a79749d"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Get_users_gateways",
+  "domains": {
+    "10": {
+      "id": 10,
+      "enabled": false,
+      "name": "new-domain",
+      "sip_regs_counter": 0
+    },
+    "8": {
+      "id": 8,
+      "enabled": true,
+      "name": "domain.com",
+      "sip_regs_counter": 0
+    },
+    "9": {
+      "id": 9,
+      "enabled": true,
+      "name": "test1",
+      "sip_regs_counter": 0
+    }
+  },
+  "directory_users": {
+    "8": {
+      "104": {
+        "id": 104,
+        "enabled": true,
+        "name": "4000",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "105": {
+        "id": 105,
+        "enabled": true,
+        "name": "5000",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "106": {
+        "id": 106,
+        "enabled": true,
+        "name": "5001",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "107": {
+        "id": 107,
+        "enabled": true,
+        "name": "5002",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "108": {
+        "id": 108,
+        "enabled": true,
+        "name": "5003",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "109": {
+        "id": 109,
+        "enabled": true,
+        "name": "5004",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "110": {
+        "id": 110,
+        "enabled": true,
+        "name": "5005",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "111": {
+        "id": 111,
+        "enabled": true,
+        "name": "5006",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "112": {
+        "id": 112,
+        "enabled": true,
+        "name": "5007",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "113": {
+        "id": 113,
+        "enabled": true,
+        "name": "5008",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "114": {
+        "id": 114,
+        "enabled": true,
+        "name": "5009",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "115": {
+        "id": 115,
+        "enabled": true,
+        "name": "6000",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "116": {
+        "id": 116,
+        "enabled": true,
+        "name": "1400",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "57": {
+        "id": 57,
+        "enabled": true,
+        "name": "1001",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "58": {
+        "id": 58,
+        "enabled": true,
+        "name": "1002",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "59": {
+        "id": 59,
+        "enabled": true,
+        "name": "1003",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "60": {
+        "id": 60,
+        "enabled": true,
+        "name": "1004",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "61": {
+        "id": 61,
+        "enabled": true,
+        "name": "1005",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "62": {
+        "id": 62,
+        "enabled": true,
+        "name": "1006",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "63": {
+        "id": 63,
+        "enabled": true,
+        "name": "1007",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "64": {
+        "id": 64,
+        "enabled": true,
+        "name": "1008",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "65": {
+        "id": 65,
+        "enabled": true,
+        "name": "1009",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "66": {
+        "id": 66,
+        "enabled": true,
+        "name": "1010",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "67": {
+        "id": 67,
+        "enabled": true,
+        "name": "1011",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "68": {
+        "id": 68,
+        "enabled": true,
+        "name": "1012",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "69": {
+        "id": 69,
+        "enabled": true,
+        "name": "1013",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "70": {
+        "id": 70,
+        "enabled": true,
+        "name": "1014",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "71": {
+        "id": 71,
+        "enabled": true,
+        "name": "1015",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "72": {
+        "id": 72,
+        "enabled": true,
+        "name": "1016",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "73": {
+        "id": 73,
+        "enabled": true,
+        "name": "1017",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "74": {
+        "id": 74,
+        "enabled": true,
+        "name": "1018",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "75": {
+        "id": 75,
+        "enabled": true,
+        "name": "1019",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "76": {
+        "id": 76,
+        "enabled": true,
+        "name": "brian",
+        "cache": 5000,
+        "cidr": "192.0.2.0/24",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "77": {
+        "id": 77,
+        "enabled": true,
+        "name": "default",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "78": {
+        "id": 78,
+        "enabled": true,
+        "name": "example.com",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "79": {
+        "id": 79,
+        "enabled": true,
+        "name": "SEP001120AABBCC",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      }
+    },
+    "9": {
+      "100": {
+        "id": 100,
+        "enabled": true,
+        "name": "brian",
+        "cache": 5000,
+        "cidr": "192.0.2.0/24",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "101": {
+        "id": 101,
+        "enabled": true,
+        "name": "default",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "102": {
+        "id": 102,
+        "enabled": true,
+        "name": "example.com",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "103": {
+        "id": 103,
+        "enabled": true,
+        "name": "SEP001120AABBCC",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "80": {
+        "id": 80,
+        "enabled": true,
+        "name": "1000",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "81": {
+        "id": 81,
+        "enabled": true,
+        "name": "1001",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "82": {
+        "id": 82,
+        "enabled": true,
+        "name": "1002",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "83": {
+        "id": 83,
+        "enabled": true,
+        "name": "1003",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "84": {
+        "id": 84,
+        "enabled": true,
+        "name": "1004",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "85": {
+        "id": 85,
+        "enabled": true,
+        "name": "1005",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "86": {
+        "id": 86,
+        "enabled": true,
+        "name": "1006",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "87": {
+        "id": 87,
+        "enabled": true,
+        "name": "1007",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "88": {
+        "id": 88,
+        "enabled": true,
+        "name": "1008",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "89": {
+        "id": 89,
+        "enabled": true,
+        "name": "1009",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "90": {
+        "id": 90,
+        "enabled": true,
+        "name": "1010",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "91": {
+        "id": 91,
+        "enabled": true,
+        "name": "1011",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "92": {
+        "id": 92,
+        "enabled": true,
+        "name": "1012",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "93": {
+        "id": 93,
+        "enabled": true,
+        "name": "1013",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "94": {
+        "id": 94,
+        "enabled": true,
+        "name": "1014",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "95": {
+        "id": 95,
+        "enabled": true,
+        "name": "1015",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "96": {
+        "id": 96,
+        "enabled": true,
+        "name": "1016",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "97": {
+        "id": 97,
+        "enabled": true,
+        "name": "1017",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "98": {
+        "id": 98,
+        "enabled": true,
+        "name": "1018",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "99": {
+        "id": 99,
+        "enabled": true,
+        "name": "1019",
+        "cache": 5000,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      }
+    }
+  },
+  "user_gateways": {
+    "8": {
+      "78": {
+        "4": {
+          "id": 4,
+          "enabled": true,
+          "name": "example.com"
+        }
+      }
+    },
+    "9": {
+      "102": {
+        "5": {
+          "id": 5,
+          "enabled": true,
+          "name": "example.com"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Get list of directory user's gateways.
+
+##### Event value
+
+`[Gateways] Get_users_gateways`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+
+
+##### Errors
+
+
+
+
+
+#### Get User's Gateway Details
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Get_user_gateways_details","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Get_user_gateways_details","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Get_user_gateways_details",
+  "gateway_details": {
+    "4": {
+      "parameters": {
+        "25": {
+          "id": 25,
+          "enabled": true,
+          "name": "username",
+          "value": "joeuser"
+        },
+        "26": {
+          "id": 26,
+          "enabled": true,
+          "name": "password",
+          "value": "jbjvh3h2y3ug3i2h2u3pi32ug3oi3iu3gpu22iu"
+        },
+        "27": {
+          "id": 27,
+          "enabled": true,
+          "name": "from-user",
+          "value": "joeuser"
+        },
+        "28": {
+          "id": 28,
+          "enabled": true,
+          "name": "from-domain",
+          "value": "example.com"
+        },
+        "29": {
+          "id": 29,
+          "enabled": true,
+          "name": "expire-seconds",
+          "value": "600"
+        },
+        "30": {
+          "id": 30,
+          "enabled": true,
+          "name": "register",
+          "value": "false"
+        },
+        "31": {
+          "id": 31,
+          "enabled": true,
+          "name": "retry-seconds",
+          "value": "30"
+        },
+        "32": {
+          "id": 32,
+          "enabled": true,
+          "name": "extension",
+          "value": "5000"
+        },
+        "33": {
+          "id": 33,
+          "enabled": true,
+          "name": "context",
+          "value": "public"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Get list of users gateway parameters and variables.
+
+##### Event value
+
+`[Gateways] Get_user_gateways_details`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* wrong id
+* gateway not found
+
+
+
+
+#### Add User's Gateway Parameter
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Add_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4,"name":"param1","value":"val1"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Add_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4,"name":"param1","value":"val1"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Add_user_gateway_param",
+  "item": {
+    "id": 48,
+    "name": "param1",
+    "value": "val1",
+    "enabled": true
+  }
+}
+
+```
+
+Add new directory user's gateway parameter.
+
+##### Event value
+
+`[Gateways] Add_user_gateway_param`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+ value | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* user gateway not found
+* can't add
+
+
+
+
+#### Update User's Gateway Parameter
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Update_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48,"name":"param1","value":"val2"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Update_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48,"name":"param1","value":"val2"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Update_user_gateway_param",
+  "gateway_details": {
+    "4": {
+      "parameters": {
+        "48": {
+          "id": 48,
+          "enabled": true,
+          "name": "param1",
+          "value": "val2"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Update directory user gateway parameter name or value or both.
+
+##### Event value
+
+`[Gateways] Update_user_gateway_param`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+ value | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* param not found
+* can't update
+
+
+
+
+#### Disable User's Gateway Parameter
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways][Switch] Param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48,"enabled":false}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways][Switch] Param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48,"enabled":false}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways][Switch] Param",
+  "gateway_details": {
+    "4": {
+      "parameters": {
+        "48": {
+          "id": 48,
+          "enabled": false,
+          "name": "param1",
+          "value": "val2"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Disable/enable directory user's gateway parameter.
+
+##### Event value
+
+`[Gateways][Switch] Param`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ enabled | Boolean | 
+
+
+##### Errors
+
+* no id
+* parameter not found
+* empty data
+* can't change
+
+
+
+
+#### Delete User's Gateway Parameter
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Del_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Del_user_gateway_param","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":48}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Del_user_gateway_param",
+  "id": 48
+}
+
+```
+
+Delete directory user's gateway parameter.
+
+##### Event value
+
+`[Gateways] Del_user_gateway_param`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* wrong id
+* can't delete
+
+
+
+
+#### Add User's Gateway Variable
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Add_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4,"index":0,"variable":{"enabled":true,"name":"var1","value":"val1"}}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Add_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":4,"index":0,"variable":{"enabled":true,"name":"var1","value":"val1"}}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Add_user_gateway_var",
+  "gateway_details": {
+    "4": {
+      "variables": {
+        "1": {
+          "id": 1,
+          "enabled": true,
+          "name": "var1",
+          "value": "val1",
+          "direction": ""
+        }
+      }
+    }
+  }
+}
+
+```
+
+Add directory user gateway variable.
+
+##### Event value
+
+`[Gateways] Add_user_gateway_var`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ index | Integer | 
+ variable":{"enabled | Boolean | 
+ name | String | 
+ value | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* gateway not found
+
+
+
+
+#### Update User's Gateway Variable
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Update_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":true,"name":"var1","value":"val1","direction":"inbound"}}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Update_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":true,"name":"var1","value":"val1","direction":"inbound"}}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Update_user_gateway_var",
+  "gateway_details": {
+    "4": {
+      "variables": {
+        "1": {
+          "id": 1,
+          "enabled": true,
+          "name": "var1",
+          "value": "val1",
+          "direction": "inbound"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Update directory user gateway variable name or value or direction or all three.
+
+##### Event value
+
+`[Gateways] Update_user_gateway_var`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ variable":{"id | Integer | 
+ enabled | Boolean | 
+ name | String | 
+ value | String | 
+ direction | String | 
+
+
+##### Errors
+
+* empty data
+* variable not found
+* can't update
+
+
+
+
+#### Disable User's Gateway Variable
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Switch_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":false,"name":"var1","value":"val1","direction":"inbound"}}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Switch_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":false,"name":"var1","value":"val1","direction":"inbound"}}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Switch_user_gateway_var",
+  "gateway_details": {
+    "4": {
+      "variables": {
+        "1": {
+          "id": 1,
+          "enabled": false,
+          "name": "var1",
+          "value": "val1",
+          "direction": "inbound"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Disable/enable directory user's gateway variable.
+
+##### Event value
+
+`[Gateways] Switch_user_gateway_var`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ variable":{"id | Integer | 
+ enabled | Boolean | 
+ name | String | 
+ value | String | 
+ direction | String | 
+
+
+##### Errors
+
+* empty data
+* variable not found
+* can't change
+
+
+
+
+#### Delete User's Gateway Variable
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Del_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":false,"name":"var1","value":"val1","direction":"inbound"}}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Del_user_gateway_var","data":{"token":"dd64511448aed2ce2160fc091a79749d","variable":{"id":1,"enabled":false,"name":"var1","value":"val1","direction":"inbound"}}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Del_user_gateway_var",
+  "gateway_details": {
+    "4": {
+      "variables": {
+        "1": {
+          "id": 1,
+          "enabled": false,
+          "name": "var1",
+          "value": "val1",
+          "direction": "inbound"
+        }
+      }
+    }
+  }
+}
+
+```
+
+Delete directory user's gateway variable.
+
+##### Event value
+
+`[Gateways] Del_user_gateway_var`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ variable":{"id | Integer | 
+ enabled | Boolean | 
+ name | String | 
+ value | String | 
+ direction | String | 
+
+
+##### Errors
+
+* empty data
+* variable not found
+* can't delete
+
+
