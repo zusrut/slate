@@ -11,8 +11,8 @@ toc_footers:
 
 includes:
   - directory
-  - configuration
   - dialplan
+  - configuration
   - rest
 
 search: true

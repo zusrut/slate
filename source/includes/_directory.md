@@ -1051,73 +1051,86 @@ exampleSocket.send('{"event":"[Users] Get_user_details","data":{"token":"dd64511
 {
   "MessageType": "[Users] Get_user_details",
   "user_details": {
-    "56": {
+    "117": {
       "parameters": {
-        "91": {
-          "id": 91,
+        "182": {
+          "id": 182,
           "enabled": true,
           "name": "password",
           "value": "5555"
         },
-        "92": {
-          "id": 92,
+        "183": {
+          "id": 183,
           "enabled": true,
           "name": "vm-password",
           "value": "1000"
+        },
+        "270": {
+          "id": 270,
+          "enabled": true,
+          "name": "xc",
+          "value": "xc"
         }
       },
       "variables": {
-        "362": {
-          "id": 362,
+        "1043": {
+          "id": 1043,
+          "enabled": true,
+          "name": "recog",
+          "value": "true"
+        },
+        "707": {
+          "id": 707,
           "enabled": true,
           "name": "toll_allow",
           "value": "domestic,international,local"
         },
-        "363": {
-          "id": 363,
+        "708": {
+          "id": 708,
           "enabled": true,
           "name": "accountcode",
           "value": "1000"
         },
-        "364": {
-          "id": 364,
+        "709": {
+          "id": 709,
           "enabled": true,
           "name": "user_context",
           "value": "default"
         },
-        "365": {
-          "id": 365,
+        "710": {
+          "id": 710,
           "enabled": true,
           "name": "effective_caller_id_name",
           "value": "Extension 1000"
         },
-        "366": {
-          "id": 366,
+        "711": {
+          "id": 711,
           "enabled": true,
           "name": "effective_caller_id_number",
           "value": "1000"
         },
-        "367": {
-          "id": 367,
+        "712": {
+          "id": 712,
           "enabled": true,
           "name": "outbound_caller_id_name",
           "value": "FreeSWITCH"
         },
-        "368": {
-          "id": 368,
+        "713": {
+          "id": 713,
           "enabled": true,
           "name": "outbound_caller_id_number",
           "value": "0000000000"
         },
-        "369": {
-          "id": 369,
+        "714": {
+          "id": 714,
           "enabled": true,
           "name": "callgroup",
           "value": "techsupport"
         }
       },
       "cache": 5000,
-      "cidr": ""
+      "cidr": "333",
+      "number_alias": ""
     }
   }
 }
@@ -1686,6 +1699,53 @@ Parameter | Type | Description
 
 
 
+#### Update User Number Alias
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Users] Update_user_number_alias","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","value":"user1","id":117}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Users] Update_user_number_alias","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","value":"user1","id":117}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Users] Update_user_number_alias",
+  "item": {
+    "id": 117,
+    "value": "user1"
+  }
+}
+
+```
+
+Update directory user number alias value.
+
+##### Event value
+
+`[Users] Update_user_number_alias`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ value | String | 
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* wrong id
+* empty data
+
+
+
+
 #### Add User
 
 ```shell
@@ -1764,6 +1824,76 @@ exampleSocket.send('{"event":"[Users] Add_new_user","data":{"token":"dd64511448a
         "id": 109,
         "enabled": true,
         "name": "5004",
+        "cache": 0,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "110": {
+        "id": 110,
+        "enabled": true,
+        "name": "5005",
+        "cache": 0,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "111": {
+        "id": 111,
+        "enabled": true,
+        "name": "5006",
+        "cache": 0,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "112": {
+        "id": 112,
+        "enabled": true,
+        "name": "5007",
+        "cache": 0,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "113": {
+        "id": 113,
+        "enabled": true,
+        "name": "5008",
+        "cache": 0,
+        "cidr": "",
+        "call_date": 0,
+        "in_call": false,
+        "talking": false,
+        "last_uuid": "",
+        "call_direction": "",
+        "sip_register": false,
+        "verto_register": false
+      },
+      "114": {
+        "id": 114,
+        "enabled": true,
+        "name": "5009",
         "cache": 0,
         "cidr": "",
         "call_date": 0,
@@ -2638,153 +2768,6 @@ Parameter | Type | Description
 
 
 
-#### Add User's Gateway
-
-```shell
-curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}'
-```
-```javascript
-exampleSocket.send('{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}');
-```
-
-
-> Returns JSON structured like this:
-
-```json
-{
-  "MessageType": "[Gateways] Add_new_user_gateway",
-  "item": {
-    "id": 6,
-    "name": "new"
-  },
-  "id": 8,
-  "affected_id": 57
-}
-
-```
-
-Add directory user's gateway.
-
-##### Event value
-
-`[Gateways] Add_new_user_gateway`
-
-##### Data Parameters
-
-Parameter | Type | Description
---------- | ------- | -----------
- token | String | User auth token.
- id | Integer | Item ID.
- name | String | 
-
-
-##### Errors
-
-* wrong id
-* empty data
-* domain not found
-
-
-
-
-#### Rename User's Gateway
-
-```shell
-curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}'
-```
-```javascript
-exampleSocket.send('{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}');
-```
-
-
-> Returns JSON structured like this:
-
-```json
-{
-  "MessageType": "[Gateways] Update_user_gateway_name",
-  "item": {
-    "id": 6,
-    "name": "new2"
-  },
-  "id": 8,
-  "affected_id": 57
-}
-
-```
-
-Change directory user gateway name.
-
-##### Event value
-
-`[Gateways] Update_user_gateway_name`
-
-##### Data Parameters
-
-Parameter | Type | Description
---------- | ------- | -----------
- token | String | User auth token.
- id | Integer | Item ID.
- name | String | 
-
-
-##### Errors
-
-* gateway not found
-* empty data
-* gateway not found
-
-
-
-
-#### Delete User's Gateway
-
-```shell
-curl -X POST "https://HOST:PORT/api/v1"
-	 -d '{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}'
-```
-```javascript
-exampleSocket.send('{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}');
-```
-
-
-> Returns JSON structured like this:
-
-```json
-{
-  "MessageType": "[Gateways] Del_user_gateway",
-  "item": {
-    "id": 6
-  },
-  "id": 8,
-  "affected_id": 57
-}
-
-```
-
-Delete directory user gateway.
-
-##### Event value
-
-`[Gateways] Del_user_gateway`
-
-##### Data Parameters
-
-Parameter | Type | Description
---------- | ------- | -----------
- token | String | User auth token.
- id | Integer | Item ID.
-
-
-##### Errors
-
-* gateway not found
-* can't delete gateway
-
-
-
-
 #### Get User's Gateway
 
 ```shell
@@ -3144,526 +3127,6 @@ exampleSocket.send('{"event":"[Gateways] Get_users_gateways","data":{"token":"dd
         "call_direction": "",
         "sip_register": false,
         "verto_register": false
-      },
-      "67": {
-        "id": 67,
-        "enabled": true,
-        "name": "1011",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "68": {
-        "id": 68,
-        "enabled": true,
-        "name": "1012",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "69": {
-        "id": 69,
-        "enabled": true,
-        "name": "1013",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "70": {
-        "id": 70,
-        "enabled": true,
-        "name": "1014",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "71": {
-        "id": 71,
-        "enabled": true,
-        "name": "1015",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "72": {
-        "id": 72,
-        "enabled": true,
-        "name": "1016",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "73": {
-        "id": 73,
-        "enabled": true,
-        "name": "1017",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "74": {
-        "id": 74,
-        "enabled": true,
-        "name": "1018",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "75": {
-        "id": 75,
-        "enabled": true,
-        "name": "1019",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "76": {
-        "id": 76,
-        "enabled": true,
-        "name": "brian",
-        "cache": 5000,
-        "cidr": "192.0.2.0/24",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "77": {
-        "id": 77,
-        "enabled": true,
-        "name": "default",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "78": {
-        "id": 78,
-        "enabled": true,
-        "name": "example.com",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "79": {
-        "id": 79,
-        "enabled": true,
-        "name": "SEP001120AABBCC",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      }
-    },
-    "9": {
-      "100": {
-        "id": 100,
-        "enabled": true,
-        "name": "brian",
-        "cache": 5000,
-        "cidr": "192.0.2.0/24",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "101": {
-        "id": 101,
-        "enabled": true,
-        "name": "default",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "102": {
-        "id": 102,
-        "enabled": true,
-        "name": "example.com",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "103": {
-        "id": 103,
-        "enabled": true,
-        "name": "SEP001120AABBCC",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "80": {
-        "id": 80,
-        "enabled": true,
-        "name": "1000",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "81": {
-        "id": 81,
-        "enabled": true,
-        "name": "1001",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "82": {
-        "id": 82,
-        "enabled": true,
-        "name": "1002",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "83": {
-        "id": 83,
-        "enabled": true,
-        "name": "1003",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "84": {
-        "id": 84,
-        "enabled": true,
-        "name": "1004",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "85": {
-        "id": 85,
-        "enabled": true,
-        "name": "1005",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "86": {
-        "id": 86,
-        "enabled": true,
-        "name": "1006",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "87": {
-        "id": 87,
-        "enabled": true,
-        "name": "1007",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "88": {
-        "id": 88,
-        "enabled": true,
-        "name": "1008",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "89": {
-        "id": 89,
-        "enabled": true,
-        "name": "1009",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "90": {
-        "id": 90,
-        "enabled": true,
-        "name": "1010",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "91": {
-        "id": 91,
-        "enabled": true,
-        "name": "1011",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "92": {
-        "id": 92,
-        "enabled": true,
-        "name": "1012",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "93": {
-        "id": 93,
-        "enabled": true,
-        "name": "1013",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "94": {
-        "id": 94,
-        "enabled": true,
-        "name": "1014",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "95": {
-        "id": 95,
-        "enabled": true,
-        "name": "1015",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "96": {
-        "id": 96,
-        "enabled": true,
-        "name": "1016",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "97": {
-        "id": 97,
-        "enabled": true,
-        "name": "1017",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "98": {
-        "id": 98,
-        "enabled": true,
-        "name": "1018",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
-      },
-      "99": {
-        "id": 99,
-        "enabled": true,
-        "name": "1019",
-        "cache": 5000,
-        "cidr": "",
-        "call_date": 0,
-        "in_call": false,
-        "talking": false,
-        "last_uuid": "",
-        "call_direction": "",
-        "sip_register": false,
-        "verto_register": false
       }
     }
   },
@@ -3706,6 +3169,153 @@ Parameter | Type | Description
 
 ##### Errors
 
+
+
+
+
+#### Add User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Add_new_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":57,"name":"new"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Add_new_user_gateway",
+  "item": {
+    "id": 6,
+    "name": "new"
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Add directory user's gateway.
+
+##### Event value
+
+`[Gateways] Add_new_user_gateway`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* wrong id
+* empty data
+* domain not found
+
+
+
+
+#### Rename User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Update_user_gateway_name","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6,"name":"new2"}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Update_user_gateway_name",
+  "item": {
+    "id": 6,
+    "name": "new2"
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Change directory user gateway name.
+
+##### Event value
+
+`[Gateways] Update_user_gateway_name`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+ name | String | 
+
+
+##### Errors
+
+* gateway not found
+* empty data
+* gateway not found
+
+
+
+
+#### Delete User's Gateway
+
+```shell
+curl -X POST "https://HOST:PORT/api/v1"
+	 -d '{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}'
+```
+```javascript
+exampleSocket.send('{"event":"[Gateways] Del_user_gateway","data":{"token":"dd64511448aed2ce2160fc091a79749d","id":6}}');
+```
+
+
+> Returns JSON structured like this:
+
+```json
+{
+  "MessageType": "[Gateways] Del_user_gateway",
+  "item": {
+    "id": 6
+  },
+  "id": 8,
+  "affected_id": 57
+}
+
+```
+
+Delete directory user gateway.
+
+##### Event value
+
+`[Gateways] Del_user_gateway`
+
+##### Data Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+ token | String | User auth token.
+ id | Integer | Item ID.
+
+
+##### Errors
+
+* gateway not found
+* can't delete gateway
 
 
 
