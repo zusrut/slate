@@ -804,6 +804,10 @@
                                     <a href="#set-extension-continue" class="toc-h4 toc-link" data-title="Set Extension Continue">Set Extension Continue</a>
 
                                   </li>
+                                  <li>
+                                    <a href="#move-extension" class="toc-h4 toc-link" data-title="Move Extension">Move Extension</a>
+
+                                  </li>
                               </ul>
                           </li>
                           <li>
@@ -833,6 +837,10 @@
                                     <a href="#get-extension-data" class="toc-h4 toc-link" data-title="Get Extension Data">Get Extension Data</a>
 
                                   </li>
+                                  <li>
+                                    <a href="#move-condition" class="toc-h4 toc-link" data-title="Move Condition">Move Condition</a>
+
+                                  </li>
                               </ul>
                           </li>
                           <li>
@@ -843,11 +851,19 @@
 
                                   </li>
                                   <li>
+                                    <a href="#update-action" class="toc-h4 toc-link" data-title="Update Action">Update Action</a>
+
+                                  </li>
+                                  <li>
                                     <a href="#disable-enable-action" class="toc-h4 toc-link" data-title="Disable/Enable Action">Disable/Enable Action</a>
 
                                   </li>
                                   <li>
                                     <a href="#delete-action" class="toc-h4 toc-link" data-title="Delete Action">Delete Action</a>
+
+                                  </li>
+                                  <li>
+                                    <a href="#move-action" class="toc-h4 toc-link" data-title="Move Action">Move Action</a>
 
                                   </li>
                               </ul>
@@ -860,11 +876,19 @@
 
                                   </li>
                                   <li>
+                                    <a href="#update-antiaction" class="toc-h4 toc-link" data-title="Update Antiaction">Update Antiaction</a>
+
+                                  </li>
+                                  <li>
                                     <a href="#disable-enable-antiaction" class="toc-h4 toc-link" data-title="Disable/Enable Antiaction">Disable/Enable Antiaction</a>
 
                                   </li>
                                   <li>
                                     <a href="#delete-antiaction" class="toc-h4 toc-link" data-title="Delete Antiaction">Delete Antiaction</a>
+
+                                  </li>
+                                  <li>
+                                    <a href="#move-antiaction" class="toc-h4 toc-link" data-title="Move Antiaction">Move Antiaction</a>
 
                                   </li>
                               </ul>
@@ -6171,6 +6195,102 @@ Methods that manipulate with authentication tokens are available only with webso
 <li>wrong value</li>
 <li>db error</li>
 </ul>
+<h4 id='move-extension'>Move Extension</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Move] Extension","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":3,"current_index":2,"id":376}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Move] Extension","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":3,"current_index":2,"id":376}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Move] Extension"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unloop"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">375</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outside_call"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">376</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"call_debug"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">378</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public_conference_extensions"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">377</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public_extensions"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">379</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public_did"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"continue"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Change extension priority position in context.</p>
+<h5 id='event-value-11'>Event value</h5>
+<p><code>[Dialplan][Move] Extension</code></p>
+<h5 id='data-parameters-11'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>previous_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>current_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Item ID.</td>
+</tr>
+</tbody></table>
+<h5 id='errors-11'>Errors</h5>
+<ul>
+<li>wrong id</li>
+<li>wrong position</li>
+<li>extension not found</li>
+<li>can&#39;t move extension</li>
+</ul>
 <h3 id='conditions'>Conditions</h3><h4 id='get-conditions'>Get Conditions</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Get] Conditions","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":374}}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Get] Conditions","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":374}}</span><span class="dl">'</span><span class="p">);</span>
@@ -6235,9 +6355,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-11'>Event value</h5>
+<h5 id='event-value-12'>Event value</h5>
 <p><code>[Dialplan][Get] Conditions</code></p>
-<h5 id='data-parameters-11'>Data Parameters</h5>
+<h5 id='data-parameters-12'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6256,7 +6376,7 @@ Methods that manipulate with authentication tokens are available only with webso
 <td>Item ID.</td>
 </tr>
 </tbody></table>
-<h5 id='errors-11'>Errors</h5>
+<h5 id='errors-12'>Errors</h5>
 <ul>
 <li>wrong id</li>
 <li>extension not found</li>
@@ -6302,9 +6422,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-12'>Event value</h5>
+<h5 id='event-value-13'>Event value</h5>
 <p><code>[Dialplan][Add] Condition</code></p>
-<h5 id='data-parameters-12'>Data Parameters</h5>
+<h5 id='data-parameters-13'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6323,7 +6443,7 @@ Methods that manipulate with authentication tokens are available only with webso
 <td>Item ID.</td>
 </tr>
 </tbody></table>
-<h5 id='errors-12'>Errors</h5>
+<h5 id='errors-13'>Errors</h5>
 <ul>
 <li>wrong id</li>
 <li>extension not found</li>
@@ -6370,190 +6490,8 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-13'>Event value</h5>
-<p><code>[Dialplan][Update] Condition</code></p>
-<h5 id='data-parameters-13'>Data Parameters</h5>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>token</td>
-<td>String</td>
-<td>User auth token.</td>
-</tr>
-<tr>
-<td>condition&quot;:{&quot;id</td>
-<td>Integer</td>
-<td></td>
-</tr>
-<tr>
-<td>enabled</td>
-<td>Boolean</td>
-<td></td>
-</tr>
-<tr>
-<td>position</td>
-<td>Integer</td>
-<td></td>
-</tr>
-<tr>
-<td>break</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>field</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>expression</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>hour</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>mday</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>mon</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>mweek</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>wday</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>date_time</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>time_of_day</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>year</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>minute</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>week</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>yday</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>minday</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>tz_offset</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>dst</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>regex</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>regexes</td>
-<td>Array</td>
-<td></td>
-</tr>
-<tr>
-<td>actions</td>
-<td>Array</td>
-<td></td>
-</tr>
-<tr>
-<td>antiactions</td>
-<td>Array</td>
-<td></td>
-</tr>
-</tbody></table>
-<h5 id='errors-13'>Errors</h5>
-<ul>
-<li>condition not found</li>
-<li>can&#39;t update</li>
-</ul>
-<h4 id='disable-condition'>Disable Condition</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
-     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Switch] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Switch] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Switch] Condition"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dialplan_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"374"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">499</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"break"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"mday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"mon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"mweek"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"wday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"time_of_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"minute"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"week"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"yday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"minday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tz_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div>
-<p>.</p>
 <h5 id='event-value-14'>Event value</h5>
-<p><code>[Dialplan][Switch] Condition</code></p>
+<p><code>[Dialplan][Update] Condition</code></p>
 <h5 id='data-parameters-14'>Data Parameters</h5>
 <table><thead>
 <tr>
@@ -6693,15 +6631,15 @@ Methods that manipulate with authentication tokens are available only with webso
 <li>condition not found</li>
 <li>can&#39;t update</li>
 </ul>
-<h4 id='delete-condition'>Delete Condition</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
-     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Delete] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}'</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Delete] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}</span><span class="dl">'</span><span class="p">);</span>
+<h4 id='disable-condition'>Disable Condition</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Switch] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Switch] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
 <p>Returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Delete] Condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Switch] Condition"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
   </span><span class="nl">"dialplan_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"374"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -6735,7 +6673,7 @@ Methods that manipulate with authentication tokens are available only with webso
 </span></code></pre></div>
 <p>.</p>
 <h5 id='event-value-15'>Event value</h5>
-<p><code>[Dialplan][Delete] Condition</code></p>
+<p><code>[Dialplan][Switch] Condition</code></p>
 <h5 id='data-parameters-15'>Data Parameters</h5>
 <table><thead>
 <tr>
@@ -6875,6 +6813,188 @@ Methods that manipulate with authentication tokens are available only with webso
 <li>condition not found</li>
 <li>can&#39;t update</li>
 </ul>
+<h4 id='delete-condition'>Delete Condition</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Delete] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Delete] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","condition":{"id":499,"enabled":false,"position":3,"break":"","field":"","expression":"","hour":"","mday":"","mon":"","mweek":"","wday":"","date_time":"","time_of_day":"","year":"","minute":"","week":"","yday":"","minday":"","tz_offset":"","dst":"","regex":"","regexes":[],"actions":[],"antiactions":[]}}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Delete] Condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"374"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">499</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"break"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mweek"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time_of_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minute"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"week"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"yday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tz_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>.</p>
+<h5 id='event-value-16'>Event value</h5>
+<p><code>[Dialplan][Delete] Condition</code></p>
+<h5 id='data-parameters-16'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>condition&quot;:{&quot;id</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>position</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>break</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>field</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>expression</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>hour</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>mday</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>mon</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>mweek</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>wday</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>date_time</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>time_of_day</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>year</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>minute</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>week</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>yday</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>minday</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tz_offset</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>dst</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>regex</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>regexes</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>actions</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>antiactions</td>
+<td>Array</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id='errors-16'>Errors</h5>
+<ul>
+<li>condition not found</li>
+<li>can&#39;t update</li>
+</ul>
 <h4 id='get-extension-data'>Get Extension Data</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Get] Extension details","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":486}}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Get] Extension details","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":486}}</span><span class="dl">'</span><span class="p">);</span>
@@ -6906,9 +7026,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>Get extension data, actions and antiactions.</p>
-<h5 id='event-value-16'>Event value</h5>
+<h5 id='event-value-17'>Event value</h5>
 <p><code>[Dialplan][Get] Extension details</code></p>
-<h5 id='data-parameters-16'>Data Parameters</h5>
+<h5 id='data-parameters-17'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6927,10 +7047,135 @@ Methods that manipulate with authentication tokens are available only with webso
 <td>Item ID.</td>
 </tr>
 </tbody></table>
-<h5 id='errors-16'>Errors</h5>
+<h5 id='errors-17'>Errors</h5>
 <ul>
 <li>wrong id</li>
 <li>condition not found</li>
+</ul>
+<h4 id='move-condition'>Move Condition</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Move] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":3,"current_index":2,"id":500}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Move] Condition","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":3,"current_index":2,"id":500}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Move] Condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"374"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"break"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mweek"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time_of_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minute"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"week"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"yday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tz_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">485</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"break"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${unroll_loops}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^true$"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mweek"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time_of_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minute"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"week"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"yday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tz_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">486</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"break"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${sip_looped_call}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expression"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^true$"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hour"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mweek"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"time_of_day"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minute"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"week"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"yday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minday"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tz_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"dst"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"regex"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Change condition priority position in extension.</p>
+<h5 id='event-value-18'>Event value</h5>
+<p><code>[Dialplan][Move] Condition</code></p>
+<h5 id='data-parameters-18'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>previous_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>current_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Item ID.</td>
+</tr>
+</tbody></table>
+<h5 id='errors-18'>Errors</h5>
+<ul>
+<li>wrong id</li>
+<li>wrong position</li>
+<li>condition not found</li>
+<li>can&#39;t move condition</li>
 </ul>
 <h3 id='actions'>Actions</h3><h4 id='add-action'>Add Action</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Add] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":500,"action":{"application":"name","data":"value","inline":false}}}'</span>
@@ -6961,9 +7206,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-17'>Event value</h5>
+<h5 id='event-value-19'>Event value</h5>
 <p><code>[Dialplan][Add] Action</code></p>
-<h5 id='data-parameters-17'>Data Parameters</h5>
+<h5 id='data-parameters-19'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -6997,12 +7242,92 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-17'>Errors</h5>
+<h5 id='errors-19'>Errors</h5>
 <ul>
 <li>wrong id</li>
 <li>empty data</li>
 <li>condition not found</li>
 <li>db error</li>
+</ul>
+<h4 id='update-action'>Update Action</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Update] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","action":{"id":1193,"enabled":true,"position":1,"application":"name_new","data":"value_new","inline":false}}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Update] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","action":{"id":1193,"enabled":true,"position":1,"application":"name_new","data":"value_new","inline":false}}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Update] Action"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"affected_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"500"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1193</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"inline"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>.</p>
+<h5 id='event-value-20'>Event value</h5>
+<p><code>[Dialplan][Update] Action</code></p>
+<h5 id='data-parameters-20'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>action&quot;:{&quot;id</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>position</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>application</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>inline</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id='errors-20'>Errors</h5>
+<ul>
+<li>action not found</li>
+<li>can&#39;t update</li>
 </ul>
 <h4 id='disable-enable-action'>Disable/Enable Action</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Switch] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","action":{"id":1192, "enabled":false}}}'</span>
@@ -7033,9 +7358,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-18'>Event value</h5>
+<h5 id='event-value-21'>Event value</h5>
 <p><code>[Dialplan][Switch] Action</code></p>
-<h5 id='data-parameters-18'>Data Parameters</h5>
+<h5 id='data-parameters-21'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7059,7 +7384,7 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-18'>Errors</h5>
+<h5 id='errors-21'>Errors</h5>
 <ul>
 <li>action not found</li>
 <li>can&#39;t update</li>
@@ -7084,9 +7409,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-19'>Event value</h5>
+<h5 id='event-value-22'>Event value</h5>
 <p><code>[Dialplan][Delete] Action</code></p>
-<h5 id='data-parameters-19'>Data Parameters</h5>
+<h5 id='data-parameters-22'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7105,10 +7430,85 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-19'>Errors</h5>
+<h5 id='errors-22'>Errors</h5>
 <ul>
 <li>action not found</li>
 <li>can&#39;t update</li>
+</ul>
+<h4 id='move-action'>Move Action</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Move] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":2,"current_index":1,"id":1194}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Move] Action","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":2,"current_index":1,"id":1194}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Move] Action"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"affected_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"500"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1193</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"inline"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1194</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ddd"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dddd"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"inline"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Change action priority position in condition.</p>
+<h5 id='event-value-23'>Event value</h5>
+<p><code>[Dialplan][Move] Action</code></p>
+<h5 id='data-parameters-23'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>previous_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>current_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Item ID.</td>
+</tr>
+</tbody></table>
+<h5 id='errors-23'>Errors</h5>
+<ul>
+<li>wrong id</li>
+<li>wrong position</li>
+<li>action not found</li>
+<li>can&#39;t move action</li>
 </ul>
 <h3 id='antiactions'>Antiactions</h3><h4 id='add-antiaction'>Add Antiaction</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Add] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","id":500,"antiaction":{"application":"name","data":"value"}}}'</span>
@@ -7138,9 +7538,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-20'>Event value</h5>
+<h5 id='event-value-24'>Event value</h5>
 <p><code>[Dialplan][Add] Antiaction</code></p>
-<h5 id='data-parameters-20'>Data Parameters</h5>
+<h5 id='data-parameters-24'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7169,12 +7569,86 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-20'>Errors</h5>
+<h5 id='errors-24'>Errors</h5>
 <ul>
 <li>wrong id</li>
 <li>empty data</li>
 <li>condition not found</li>
 <li>db error</li>
+</ul>
+<h4 id='update-antiaction'>Update Antiaction</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Update] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","antiaction":{"id":35,"enabled":true,"position":1,"application":"name_new","data":"value_new"}}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Update] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","antiaction":{"id":35,"enabled":true,"position":1,"application":"name_new","data":"value_new"}}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Update] Antiaction"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"affected_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"500"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"antiactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value_new"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>.</p>
+<h5 id='event-value-25'>Event value</h5>
+<p><code>[Dialplan][Update] Antiaction</code></p>
+<h5 id='data-parameters-25'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>antiaction&quot;:{&quot;id</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>position</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>application</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id='errors-25'>Errors</h5>
+<ul>
+<li>antiAction not found</li>
+<li>can&#39;t update</li>
 </ul>
 <h4 id='disable-enable-antiaction'>Disable/Enable Antiaction</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
      <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Switch] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","antiaction":{"id":33,"enabled":false}}}'</span>
@@ -7204,9 +7678,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-21'>Event value</h5>
+<h5 id='event-value-26'>Event value</h5>
 <p><code>[Dialplan][Switch] Antiaction</code></p>
-<h5 id='data-parameters-21'>Data Parameters</h5>
+<h5 id='data-parameters-26'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7230,7 +7704,7 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-21'>Errors</h5>
+<h5 id='errors-26'>Errors</h5>
 <ul>
 <li>antiAction not found</li>
 <li>can&#39;t update</li>
@@ -7255,9 +7729,9 @@ Methods that manipulate with authentication tokens are available only with webso
 
 </span></code></pre></div>
 <p>.</p>
-<h5 id='event-value-22'>Event value</h5>
+<h5 id='event-value-27'>Event value</h5>
 <p><code>[Dialplan][Delete] Antiaction</code></p>
-<h5 id='data-parameters-22'>Data Parameters</h5>
+<h5 id='data-parameters-27'>Data Parameters</h5>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -7276,10 +7750,83 @@ Methods that manipulate with authentication tokens are available only with webso
 <td></td>
 </tr>
 </tbody></table>
-<h5 id='errors-22'>Errors</h5>
+<h5 id='errors-27'>Errors</h5>
 <ul>
 <li>antiAction not found</li>
 <li>can&#39;t delete</li>
+</ul>
+<h4 id='move-antiaction'>Move Antiaction</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://HOST:PORT/api/v1"</span>
+     <span class="nt">-d</span> <span class="s1">'{"event":"[Dialplan][Move] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":2,"current_index":1,"id":36}}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">exampleSocket</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">{"event":"[Dialplan][Move] Antiaction","data":{"token":"185f2b5b4dbf7a456e6d6f9cb62805cb","previous_index":2,"current_index":1,"id":36}}</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"MessageType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Dialplan][Move] Antiaction"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"affected_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">374</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dialplan_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"500"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"antiactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name_new"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value_new"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sddsdsds"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsdds"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Change antiAction priority position in condition.</p>
+<h5 id='event-value-28'>Event value</h5>
+<p><code>[Dialplan][Move] Antiaction</code></p>
+<h5 id='data-parameters-28'>Data Parameters</h5>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>User auth token.</td>
+</tr>
+<tr>
+<td>previous_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>current_index</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Item ID.</td>
+</tr>
+</tbody></table>
+<h5 id='errors-28'>Errors</h5>
+<ul>
+<li>wrong id</li>
+<li>wrong position</li>
+<li>antiAction not found</li>
+<li>can&#39;t move antiAction</li>
 </ul>
 <h2 id='configuration'>Configuration</h2><h3 id='modules'>Modules</h3><h3 id='acl'>ACL</h3><h3 id='post_load_switch'>post_load_switch</h3><h3 id='callcenter'>callcenter</h3><h3 id='cdr_pg_csv'>cdr_pg_csv</h3><h3 id='odbc_cdr'>odbc_cdr</h3><h3 id='lcr'>lcr</h3><h3 id='sofia'>sofia</h3><h3 id='verto'>verto</h3><h3 id='shout'>shout</h3><h3 id='redis'>redis</h3><h3 id='nibblebill'>nibblebill</h3><h3 id='db'>db</h3><h3 id='distributor'>distributor</h3><h3 id='memcache'>memcache</h3><h3 id='avmd'>avmd</h3><h3 id='tts_commandline'>tts_commandline</h3><h3 id='cdr_mongodb'>cdr_mongodb</h3><h3 id='http_cache'>http_cache</h3><h3 id='opus'>opus</h3><h3 id='python'>python</h3><h3 id='alsa'>alsa</h3><h3 id='amr'>amr</h3><h3 id='amrwb'>amrwb</h3><h3 id='cepstral'>cepstral</h3><h3 id='cidlookup'>cidlookup</h3><h3 id='curl'>curl</h3><h3 id='dialplan_directory'>dialplan_directory</h3><h3 id='easyroute'>easyroute</h3><h3 id='erlang_event'>erlang_event</h3><h3 id='event_multicast'>event_multicast</h3><h3 id='fax'>fax</h3><h3 id='lua'>lua</h3><h3 id='mongo'>mongo</h3><h3 id='msrp'>msrp</h3><h3 id='oreka'>oreka</h3><h3 id='perl'>perl</h3><h3 id='pocketsphinx'>pocketsphinx</h3><h3 id='sangoma_codec'>sangoma_codec</h3><h3 id='sndfile'>sndfile</h3><h3 id='xml_cdr'>xml_cdr</h3><h3 id='xml_rpc'>xml_rpc</h3><h3 id='zeroconf'>zeroconf</h3><h3 id='directory'>directory</h3><h3 id='fifo'>fifo</h3><h3 id='opal'>opal</h3><h3 id='osp'>osp</h3><h3 id='unicall'>unicall</h3><h3 id='conference'>conference</h3><h3 id='conference_layouts'>conference_layouts</h3>
       </div>
